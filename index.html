@@ -30,6 +30,7 @@ body{margin:0;padding:18px;background:#ece7dc;font-family:Georgia,"Times New Rom
     <label>Host / Name</label><input name="host" placeholder="Rabbi & Mrs. Cohen" required>
     <label>Location</label><input name="location" placeholder="123 Maple Avenue" required>
     <label>Time</label><input name="time" placeholder="8:30 PM" required>
+    <label>Date</label><input name="date" placeholder="Tuesday, March 23, 2026" required>
     <button type="submit">Generate</button>
   </form>
 </div>
@@ -55,6 +56,7 @@ body{margin:0;padding:18px;background:#ece7dc;font-family:Georgia,"Times New Rom
       <div class="meeting-grid">
         <div class="meeting-item"><div class="meeting-label">Host</div><div id="hostDisplay" class="meeting-value"></div></div>
         <div class="meeting-item"><div class="meeting-label">Location</div><div id="locationDisplay" class="meeting-value"></div></div>
+        <div class="meeting-item"><div class="meeting-label">Date</div><div id="dateDisplay" class="meeting-value"></div></div>
         <div class="meeting-item"><div class="meeting-label">Time</div><div id="timeDisplay" class="meeting-value"></div></div>
       </div>
     </div>
@@ -86,6 +88,7 @@ body{margin:0;padding:18px;background:#ece7dc;font-family:Georgia,"Times New Rom
         <div class="ad-meeting-grid">
           <div><div class="ad-meeting-label">Host</div><div id="adHostDisplay" class="ad-meeting-value"></div></div>
           <div><div class="ad-meeting-label">Location</div><div id="adLocationDisplay" class="ad-meeting-value"></div></div>
+          <div><div class="ad-meeting-label">Date</div><div id="adDateDisplay" class="ad-meeting-value"></div></div>
           <div><div class="ad-meeting-label">Time</div><div id="adTimeDisplay" class="ad-meeting-value"></div></div>
         </div>
       </div>
@@ -97,12 +100,13 @@ body{margin:0;padding:18px;background:#ece7dc;font-family:Georgia,"Times New Rom
 const params=new URLSearchParams(window.location.search);
 const host=params.get('host');
 const locationText=params.get('location');
+const date=params.get('date');
 const time=params.get('time');
 function setText(id,val){document.getElementById(id).textContent=val;}
-if(host&&locationText&&time){
+if(host&&locationText&&date&&time){
   document.getElementById('generated').style.display='block';
-  setText('hostDisplay',host);setText('locationDisplay',locationText);setText('timeDisplay',time);
-  setText('adHostDisplay',host);setText('adLocationDisplay',locationText);setText('adTimeDisplay',time);
+  setText('hostDisplay',host);setText('locationDisplay',locationText);setText('dateDisplay',time);setText('timeDisplay',time);
+  setText('adHostDisplay',host);setText('adLocationDisplay',locationText);setText('adDateDisplay',time);setText('adTimeDisplay',time);
 }else{document.getElementById('formContainer').style.display='block';}
 function printSection(section){
   document.body.classList.remove('print-letter','print-ad');

@@ -5,6 +5,7 @@ Open `index.html` in a browser.
 Fill in:
 - Host / Name
 - Location
+- Date
 - Time
 
 The generated page includes buttons to save/print:
@@ -15,7 +16,7 @@ The generated page includes buttons to save/print:
 When the print dialog opens, choose **Save as PDF**.
 
 The URL can also be shared directly, for example:
-`index.html?host=Rabbi%20Cohen&location=123%20Maple%20Ave&time=8:30%20PM`
+`index.html?host=Rabbi%20Cohen&location=123%20Maple%20Ave&date=Tuesday%20AMarch,%20A23,%20A2026&time=8:30%20PM`
 
 Keep `logo.png` in the same folder as `index.html`.
 # chasuna-find-meeting-temp
